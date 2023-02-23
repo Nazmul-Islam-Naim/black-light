@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::middleware('auth')->group(function () {
         return Auth::user()->id;
     });
     Route::get('send-mail',[MailController::class,'index']);
+    Route::resource('designations',DesignationController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -3,13 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserFactory extends Factory
+class DesignationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,11 +18,8 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'NINTIT',
-            'email' => 'nintit@mail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('password'), // password
-            'remember_token' => Hash::make('password'),
+            'title' => fake()->name(),
+            'slug' => fake()->slug(),
         ];
     }
 
